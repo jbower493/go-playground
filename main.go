@@ -20,4 +20,18 @@ func main() {
 
 	fmt.Println(formatted)
 	fmt.Println(tenThirtyPmUtcFormatted)
+
+	type Metadata struct {
+		LastChanged time.Time
+	}
+
+	type Vertex struct {
+		X        int
+		Y        int
+		Metadata Metadata
+	}
+
+	vert := Vertex{X: 1, Y: 2, Metadata: Metadata{LastChanged: time.Now()}}
+
+	fmt.Println(vert.X, vert.Y, vert.Metadata)
 }
